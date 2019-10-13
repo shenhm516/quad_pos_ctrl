@@ -54,7 +54,7 @@ class Controller : public State_Estimate_Vio {
 
             down_ward_lidar_sub = nh_.subscribe("/lidar_pose",10, &Controller::down_ward_lidar_cb, this);
 
-            nh_.param<std::string>("/controller_logger_file_name",  logger_file_name, "/home/lhc/gazebo_simulate_logger/");
+            nh_.param<std::string>("/controller_logger_file_name",  logger_file_name, "/home/shm/gazebo_simulate_logger/");
 
             int result = pthread_create( &ctrl_tid, NULL, &start_controller_loop_thread, this);
             if ( result ) throw result;

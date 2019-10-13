@@ -197,7 +197,7 @@ bool Controller::takeoff_land_srv_handle(quad_pos_ctrl::SetTakeoffLand::Request&
         float yaw_diff = fabs(yaw_d-euler_pix(2));
         if (yaw_diff > M_PI)  {
             yaw_diff = 2*M_PI-yaw_diff;
-        }  
+        } 
         if (yaw_diff > 2.0f * M_PI/180.0f) {
             std::cout << "takeoff filed, Yaw error is too large" << std::endl;
             return false;
